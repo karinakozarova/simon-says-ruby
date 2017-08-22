@@ -4,11 +4,9 @@ def board
 end
 
 def clicked(char1,char2,char3,char4)
-  print char1
-  print char2
+  print char1 + char2
   puts
-  print char3
-  print char4
+  print char3 + char4
 end
 
 def rand_position
@@ -25,12 +23,25 @@ sleep(2)
 puts rand_position
 sleep(2)
 puts rand_position
+sleep(2)
 print("Input?")
-input_turns = gets.chomp.to_i
-print input_turns
-print $turns
 
-if input_turns != $turns
-  print "Lost"
-else "Won"
+flag = 1
+l = $turns.length
+puts l
+for i in 0..l-1
+   input_turns = gets.chomp.to_i
+  puts x = $turns[i]
+  if input_turns != x
+    flag = 0
+    break
+  end
 end
+
+if flag==1
+  puts "Winner!!!!"
+else
+  puts "You failed."
+end
+
+
