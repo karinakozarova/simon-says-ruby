@@ -34,7 +34,7 @@ end
 def increment_moves
   # gets new random position
   sleep(2) # waits 2 seconds
-  system 'cls'
+  system "clear" or system "cls"
   puts rand_position
 end
 
@@ -44,12 +44,12 @@ while 1
   puts board
   $all.each{|x|
     sleep(2)
-    system 'cls'
+    system "clear" or system "cls"
     puts x[0] + x[1] + "\n" + x[2] + x[3]
   }
   increment_moves # get new move
   sleep(2)
-  system 'cls'
+  system "clear" or system "cls"
   print("Input?")
 
   flag = 1
