@@ -25,13 +25,20 @@ def winning(flag)
   end
 end
 
+def increment_moves
+  sleep(2)
+  puts rand_position
+end
+
+moves = 0
+
 while 1
   $turns = Array.new
   puts board
-  sleep(2)
-  puts rand_position
-  sleep(2)
-  puts rand_position
+  for i in 0..moves
+    increment_moves
+  end
+  moves += 1
   sleep(2)
   print("Input?")
 
