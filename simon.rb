@@ -40,7 +40,7 @@ moves = 0
 $turns = Array.new # creates new array
 while 1
   puts board
-  $all.each{|x| x.each{|y| puts y}}
+  $all.each{|x| puts x[0] + x[1] + "\n" + x[2] + x[3]}  
   increment_moves # get new move
   sleep(2)
   print("Input?")
