@@ -34,6 +34,7 @@ end
 def increment_moves
   # gets new random position
   sleep(2) # waits 2 seconds
+  system 'cls'
   puts rand_position
 end
 
@@ -43,15 +44,18 @@ while 1
   puts board
   $all.each{|x|
     sleep(2)
+    system 'cls'
     puts x[0] + x[1] + "\n" + x[2] + x[3]
   }
   increment_moves # get new move
+  sleep(2)
+  system 'cls'
   print("Input?")
 
   flag = 1
   for i in 0...$turns.length
     input_turns = gets.chomp.to_i
-    puts x = $turns[i]
+    x = $turns[i]
     if input_turns != x # checks if entered move is different from output
       flag = 0
       break
@@ -59,7 +63,7 @@ while 1
   end
 
   winning(flag)
-  if flag == 0 # end infinite loop
+  if flag==0 # end infinite loop
     break
   end
 end
