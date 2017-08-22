@@ -17,31 +17,38 @@ def rand_position
   arr[0]+arr[1] + "\n" + arr[2] + arr[3]
 end
 
-$turns = Array.new
-puts board
-sleep(2)
-puts rand_position
-sleep(2)
-puts rand_position
-sleep(2)
-print("Input?")
-
-flag = 1
-l = $turns.length
-puts l
-for i in 0..l-1
-   input_turns = gets.chomp.to_i
-  puts x = $turns[i]
-  if input_turns != x
-    flag = 0
-    break
+def winning(flag)
+  if flag==1
+    puts "Winner!!!!"
+  else
+    puts "You failed."
   end
 end
 
-if flag==1
-  puts "Winner!!!!"
-else
-  puts "You failed."
+while 1
+  $turns = Array.new
+  puts board
+  sleep(2)
+  puts rand_position
+  sleep(2)
+  puts rand_position
+  sleep(2)
+  print("Input?")
+
+  flag = 1
+  l = $turns.length
+  puts l
+  for i in 0..l-1
+    input_turns = gets.chomp.to_i
+    puts x = $turns[i]
+    if input_turns != x
+      flag = 0
+      break
+    end
+  end
+
+  winning(flag)
+  if flag==0
+    break
+  end
 end
-
-
