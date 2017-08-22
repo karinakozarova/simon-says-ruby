@@ -4,6 +4,8 @@ def board
   "OO\nOO"
 end
 
+$all = Array.new
+
 def clicked(char1,char2,char3,char4)
   # print the board with the changed symbol
   print char1 + char2
@@ -35,19 +37,16 @@ def increment_moves
 end
 
 moves = 0
-
+$turns = Array.new # creates new array
 while 1
-  $turns = Array.new # creates new array
   puts board
-  flag = 1
-  for i in 0..moves
-    increment_moves # get new move
-  end
-  moves += 1
+  $all.each{|x| x.each{|y| puts y}}
+  increment_moves # get new move
   sleep(2)
   print("Input?")
 
-  for i in 0...$turns.length 
+  flag = 1
+  for i in 0...$turns.length
     input_turns = gets.chomp.to_i
     puts x = $turns[i]
     if input_turns != x # checks if entered move is different from output
